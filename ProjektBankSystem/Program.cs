@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
 
+
+
             int antalförsök = 1;
 
             int[] PrivatKonto = [5000, 2000, 100000, 77, 550];
@@ -12,6 +14,13 @@
             int[] Fond = [700000, 2000, 4000];
             int[] Kul = [30000, 10];
             int[] Femte = [9000000];
+
+            //int PrivatKonto = 3000;
+            //int sparkapital = 10000;
+            //int Fond = 100000;
+
+
+
 
             while (true)
             {
@@ -68,10 +77,7 @@
 
                                 }
 
-                                TillBackaTillHuvudmenyn();
-
                                 break;
-
                             case "2":
 
 
@@ -101,8 +107,10 @@
                                             if (ConveteradTransaktion <= PrivatKonto[inlognig])
                                             {
 
+
                                                 PrivatKonto[inlognig] = PrivatKonto[inlognig] - ConveteradTransaktion;
 
+                                                Console.WriteLine(PrivatKonto[inlognig]);
                                             }
 
                                             else
@@ -121,8 +129,10 @@
                                             if (ConveteradTransaktion <= sparkapital[inlognig])
                                             {
 
+
                                                 sparkapital[inlognig] = sparkapital[inlognig] - ConveteradTransaktion;
 
+                                                Console.WriteLine(sparkapital[inlognig]);
                                             }
 
                                             else
@@ -141,8 +151,10 @@
                                             if (ConveteradTransaktion <= Fond[inlognig])
                                             {
 
+
                                                 Fond[inlognig] = Fond[inlognig] - ConveteradTransaktion;
 
+                                                Console.WriteLine(Fond[inlognig]);
                                             }
 
                                             else
@@ -161,8 +173,10 @@
                                             if (ConveteradTransaktion <= Kul[inlognig])
                                             {
 
+
                                                 Kul[inlognig] = Kul[inlognig] - ConveteradTransaktion;
 
+                                                Console.WriteLine(Kul[inlognig]);
                                             }
 
                                             else
@@ -183,6 +197,7 @@
 
                                                 Femte[inlognig] = Femte[inlognig] - ConveteradTransaktion;
 
+                                                Console.WriteLine(Femte[inlognig]);
                                             }
 
                                             else
@@ -242,36 +257,9 @@
                                             PrivatKonto[inlognig] = PrivatKonto[inlognig] + ConveteradTransaktion;
 
                                         }
-                                        switch (val)
-                                        {
-
-                                            case 1: Console.WriteLine("PrivatKonto: " + PrivatKonto[inlognig]); break;
-                                            case 2: Console.WriteLine("Sparkapital: " + sparkapital[inlognig]); break;
-                                            case 3: Console.WriteLine("Fond: " + Fond[inlognig]); break;
-                                            case 4: Console.WriteLine("Kul: " + Kul[inlognig]); break;
-                                            case 5: Console.WriteLine("Femte: " + Femte[inlognig]); break;
-                                        }
-                                        switch (ValAvKonto)
-                                        {
-
-                                            case "1": Console.WriteLine("PrivatKonto: " + PrivatKonto[inlognig]); break;
-                                            case "2": Console.WriteLine("Sparkapital: " + sparkapital[inlognig]); break;
-                                            case "3": Console.WriteLine("Fond: " + Fond[inlognig]); break;
-                                            case "4": Console.WriteLine("Kul: " + Kul[inlognig]); break;
-                                            case "5" +
-                                            "" +
-                                            "":
-                                                Console.WriteLine("Femte: " + Femte[inlognig]); break;
-
-                                        }
 
                                         break;
                                     }
-
-
-
-
-                                    TillBackaTillHuvudmenyn();
                                     break;
                                 }
                                 catch (IndexOutOfRangeException ex)
@@ -285,108 +273,63 @@
                                 Console.WriteLine("Vilket konto vill du ta ut pengar från?  Privatkonto || Sparkapital || Found ");
 
                                 string val2 = Console.ReadLine();
-                                int Deposit = CovertedMoney();
-
-                                try
+                                int Deposit = int.Parse(Console.ReadLine());
+                                switch (val2)
                                 {
 
-                                    switch (val2)
-                                    {
+                                    case "1":
+                                        Console.WriteLine();
 
-                                        case "1":
+                                        if (Deposit <= PrivatKonto[inlognig])
+                                        {
+
+                                            PrivatKonto[inlognig] = PrivatKonto[inlognig] - Deposit;
+
+                                        }
+                                        else
+                                        {
+
+                                            Console.WriteLine("Går inte");
+
+                                        }
+                                        break;
+
+                                    case "2":
+                                        Console.WriteLine();
+                                        if (Deposit <= sparkapital[inlognig])
+                                        {
+
+                                            sparkapital[inlognig] = sparkapital[inlognig] - Deposit;
+
+                                        }
+                                        else
+                                        {
+
+                                            Console.WriteLine("Går inte");
+
+                                        }
+
+                                        break;
+
+                                    case "3":
+                                        Console.WriteLine();
 
 
-                                            if (Deposit <= PrivatKonto[inlognig])
-                                            {
+                                        if (Deposit <= Fond[inlognig])
+                                        {
 
-                                                PrivatKonto[inlognig] = PrivatKonto[inlognig] - Deposit;
+                                            Fond[inlognig] = Fond[inlognig] - Deposit;
 
-                                            }
-                                            else
-                                            {
+                                        }
+                                        else
+                                        {
 
-                                                Console.WriteLine("Går inte");
+                                            Console.WriteLine("Går inte");
 
-                                            }
-                                            break;
+                                        }
 
-                                        case "2":
+                                        break;
 
-                                            if (Deposit <= sparkapital[inlognig])
-                                            {
-
-                                                sparkapital[inlognig] = sparkapital[inlognig] - Deposit;
-
-                                            }
-                                            else
-                                            {
-
-                                                Console.WriteLine("Går inte");
-
-                                            }
-
-                                            break;
-
-                                        case "3":
-
-                                            if (Deposit <= Fond[inlognig])
-                                            {
-
-                                                Fond[inlognig] = Fond[inlognig] - Deposit;
-
-                                            }
-                                            else
-                                            {
-
-                                                Console.WriteLine("Går inte");
-
-                                            }
-
-                                            break;
-                                        case "4":
-
-                                            if (Deposit <= Kul[inlognig])
-                                            {
-
-                                                Kul[inlognig] = Kul[inlognig] - Deposit;
-
-                                            }
-                                            else
-                                            {
-
-                                                Console.WriteLine("Går inte");
-
-                                            }
-
-                                            break;
-
-                                        case "5":
-
-                                            if (Deposit <= Femte[inlognig])
-                                            {
-
-                                                Femte[inlognig] = Femte[inlognig] - Deposit;
-
-                                            }
-                                            else
-                                            {
-
-                                                Console.WriteLine("Går inte");
-
-                                            }
-
-                                            break;
-
-                                    }
-
-                                    TillBackaTillHuvudmenyn();
-
-                                }
-
-                                catch
-                                {
-
-                                    break;
 
                                 }
 
@@ -397,6 +340,8 @@
                         }
 
                     }
+
+
                 }
 
                 else if (antalförsök == 3)
@@ -418,83 +363,298 @@
 
             }
 
+        }
 
+        static int AnvändarnaLogin()
+        {
 
-            static int AnvändarnaLogin()
+            string[] Users = { "Pepe The Frog", "Nigerisk Prins", "Gunila Dakilla", "Ann Alhgren", "Kim Nysim" };
+            string[] Passwords = { "kek", "1234", "Sesam öppna dig", "2345", "2002" };
+            //Console.WriteLine(Users[1]);
+            //Console.WriteLine(Passwords[1]);
+            Console.WriteLine("Användar");
+            string UserLoggin = Console.ReadLine();
+            Console.WriteLine("Lösenord");
+            string RightPassword = Console.ReadLine();
+
+            int Key = 100;
+
+            if (Passwords[0] == RightPassword && UserLoggin == Users[0])
             {
-
-                string[] Users = { "Pepe The Frog", "Nigerisk Prins", "Gunila Dakilla", "Ann Alhgren", "Kim Nysim" };
-                string[] Passwords = { "kek", "1234", "Sesam öppna dig", "2345", "2002" };
-                Console.WriteLine("Användar");
-                string UserLoggin = Console.ReadLine();
-                Console.WriteLine("Lösenord");
-                string RightPassword = Console.ReadLine();
-
-                int Key = 100;
-
-                if (Passwords[0] == RightPassword && UserLoggin == Users[0])
-                {
-                    Console.WriteLine("Välkomen in!");
-                    Key = 0;
-                }
-
-                else if (Passwords[1] == RightPassword && UserLoggin == Users[1])
-                {
-                    Key = 1;
-
-                }
-                else if (Passwords[2] == RightPassword && UserLoggin == Users[2])
-                {
-                    Key = 2;
-
-                }
-                else if (Passwords[3] == RightPassword && UserLoggin == Users[3])
-                {
-                    Key = 3;
-
-                }
-                else if (Passwords[4] == RightPassword && UserLoggin == Users[4])
-                {
-                    Key = 4;
-
-                }
-                else
-                {
-                }
-                return Key;
-
-            }
-            static int CovertedMoney()
-            {
-
-                string transaktion = Console.ReadLine();
-
-                bool Heltal;
-                int ConveteradTransaktion;
-                Heltal = int.TryParse(transaktion, out ConveteradTransaktion);
-
-                return ConveteradTransaktion;
-
+                Console.WriteLine("Välkomen in!");
+                Key = 0;
             }
 
-            static void TillBackaTillHuvudmenyn()
+            else if (Passwords[1] == RightPassword && UserLoggin == Users[1])
             {
+                Key = 1;
 
-                string LämnaLoop = "Hammster";
+            }
+            else if (Passwords[2] == RightPassword && UserLoggin == Users[2])
+            {
+                Key = 2;
 
-                while (LämnaLoop != "")
+            }
+            else if (Passwords[3] == RightPassword && UserLoggin == Users[3])
+            {
+                Key = 3;
+
+            }
+            else if (Passwords[4] == RightPassword && UserLoggin == Users[4])
+            {
+                Key = 4;
+
+            }
+            else
+            {
+            }
+            return Key;
+
+        }
+        static int CovertedMoney()
+        {
+
+            string transaktion = Console.ReadLine();
+
+            bool Heltal;
+            int ConveteradTransaktion;
+            Heltal = int.TryParse(transaktion, out ConveteradTransaktion);
+
+            return ConveteradTransaktion;
+
+        }
+
+        static void FörbättradLösing()
+        {
+
+
+
+            int[] PrivatKonto = [5000, 2000, 100000, 77, 550];
+            int[] sparkapital = [10000, 100000, 10000000, 880];
+            int[] Fond = [700000, 2000, 4000];
+            int[] Kul = [30000, 10];
+            int[] Femte = [9000000];
+            int inlognig = 0;
+
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Kont 1: " + PrivatKonto[inlognig]);
+                    Console.WriteLine("Kont 2: " + sparkapital[inlognig]);
+                    Console.WriteLine("Kont 3: " + Fond[inlognig]);
+                    Console.WriteLine("Kont 4: " + Kul[inlognig]);
+                    Console.WriteLine("Kont 5: " + Femte[inlognig]);
+
+
+                    Console.WriteLine("Vilket konto vill du ta ifrån: Privatkonto || Sparkapital || Found ");
+                    int val = CovertedMoney();
+
+                    Console.WriteLine("Hur mycket vill du överföra");
+                    int ConveteradTransaktion = CovertedMoney();
+
+
+
+                    while (true)
+                    {
+                        if (ConveteradTransaktion < 0)
+                        {
+
+                            Console.WriteLine("Går inte");
+                            break;
+
+                        }
+                        if (val == 1)
+                        {
+
+
+                            if (ConveteradTransaktion <= PrivatKonto[inlognig])
+                            {
+
+                                Console.WriteLine("hkhkk");
+                                PrivatKonto[inlognig] = PrivatKonto[inlognig] - ConveteradTransaktion;
+
+                                Console.WriteLine(PrivatKonto[inlognig]);
+                            }
+
+                            else
+                            {
+
+                                Console.WriteLine("Går inte");
+                                break;
+
+                            }
+                        }
+
+                        if (val == 2)
+                        {
+
+
+                            if (ConveteradTransaktion <= sparkapital[inlognig])
+                            {
+
+                                Console.WriteLine("hkhkk");
+                                sparkapital[inlognig] = sparkapital[inlognig] - ConveteradTransaktion;
+
+                                Console.WriteLine(sparkapital[inlognig]);
+                            }
+
+                            else
+                            {
+
+                                Console.WriteLine("Går inte");
+                                break;
+
+                            }
+                        }
+
+                        if (val == 3)
+                        {
+
+
+                            if (ConveteradTransaktion <= Fond[inlognig])
+                            {
+
+                                Console.WriteLine("hkhkk");
+                                Fond[inlognig] = Fond[inlognig] - ConveteradTransaktion;
+
+                                Console.WriteLine(Fond[inlognig]);
+                            }
+
+                            else
+                            {
+
+                                Console.WriteLine("Går inte");
+                                break;
+
+                            }
+                        }
+
+                        if (val == 4)
+                        {
+
+
+                            if (ConveteradTransaktion <= Kul[inlognig])
+                            {
+
+                                Console.WriteLine("hkhkk");
+                                Kul[inlognig] = Kul[inlognig] - ConveteradTransaktion;
+
+                                Console.WriteLine(Kul[inlognig]);
+                            }
+
+                            else
+                            {
+
+                                Console.WriteLine("Går inte");
+                                break;
+
+                            }
+                        }
+
+                        if (val == 5)
+                        {
+
+
+                            if (ConveteradTransaktion <= Femte[inlognig])
+                            {
+
+                                Console.WriteLine("hkhkk");
+                                Femte[inlognig] = Femte[inlognig] - ConveteradTransaktion;
+
+                                Console.WriteLine(Femte[inlognig]);
+                            }
+
+                            else
+                            {
+
+                                Console.WriteLine("Går inte");
+                                break;
+
+                            }
+                        }
+
+
+                        else if (val > 5 || val < 0)
+                        {
+
+                            Console.WriteLine("går inte");
+                            break;
+                        }
+
+                        Console.WriteLine("Väl till vilket annat konto");
+                        string ValAvKonto = Console.ReadLine();
+
+                        if (ValAvKonto == "1")
+                        {
+
+                            PrivatKonto[inlognig] = PrivatKonto[inlognig] + ConveteradTransaktion;
+
+                        }
+
+                        else if (ValAvKonto == "2")
+                        {
+
+                            sparkapital[inlognig] = sparkapital[inlognig] + ConveteradTransaktion;
+
+                        }
+                        else if (ValAvKonto == "3")
+                        {
+
+                            Fond[inlognig] = Fond[inlognig] + ConveteradTransaktion;
+
+                        }
+                        else if (ValAvKonto == "4")
+                        {
+
+                            Kul[inlognig] = Kul[inlognig] + ConveteradTransaktion;
+
+                        }
+                        else if (ValAvKonto == "5")
+                        {
+
+                            Femte[inlognig] = Femte[inlognig] + ConveteradTransaktion;
+
+                        }
+                        else
+                        {
+
+                            PrivatKonto[inlognig] = PrivatKonto[inlognig] + ConveteradTransaktion;
+
+                        }
+
+                        break;
+                    }
+
+                }
+                catch (IndexOutOfRangeException ex)
                 {
 
-                    Console.WriteLine("Tryck enter för att komma tillbaka till huvudmeny");
-                    LämnaLoop = Console.ReadLine();
-
+                    Console.WriteLine(ex.Message);
+                    break;
                 }
 
 
             }
-
 
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
+
+
